@@ -31,16 +31,17 @@ const Todo = () => {
   };
 
   const handllePostTask = () => {
-    axios.post(`https://fullstack-task-suman-saurav.onrender.com/post`,{
+    axios
+      .post(`https://fullstack-task-suman-saurav.onrender.com/post`, {
         todoText: task,
         todoID: Date.now(),
       })
-    .then((res)=>{
+      .then((res) => {
         console.log(res.data.msg);
         getData();
         setTask("");
-    })
-    .catch((err)=>console.log(err));
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
